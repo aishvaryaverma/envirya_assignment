@@ -18,6 +18,7 @@ router.post('/', [
     check('email', 'Please enter a valid email').isEmail(),
     check('password', 'Please enter min 6 characters required').isLength({ min: 6 })
 ], async (req, res) => {
+
     // Pushing validation result in errors const
     const errors = validationResult(req);
 
@@ -31,6 +32,7 @@ router.post('/', [
     const { name, email, password } = req.body;
     
     try {
+
         // Searching for user in database based on email id we got from request body
         let user = await User.findOne({ email })
         
@@ -83,10 +85,13 @@ router.post('/', [
                 res.json({ token })
             }
         );
+
     } catch(err) {
+
         // Sending error response
         console.error(err);
         res.status(500).send('Server Error');
+        
     }
 });
 
