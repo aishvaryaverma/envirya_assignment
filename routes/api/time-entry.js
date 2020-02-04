@@ -47,7 +47,6 @@ router.post('/', [auth, [
 
     // Find logged in user id
     const user = await User.findById(req.user.id).select('-password');
-    console.log(user)
     if(!user) {
         // Sending error response
         return res.status(400).json({ errors: [{ msg: 'Bad request.' }] });
