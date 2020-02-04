@@ -1,11 +1,11 @@
 {
-	"name": "devconnector",
+	"name": "timeapp",
 	"version": "1.0.0",
 	"homepage": ".",
 	"license": "ISC",
 	"main": "index.js",
 	"author": "Aishvarya Verma",
-	"description": "Social networking app for developers",
+	"description": "",
 	"nodemonConfig": {
 		"ignore": [
 			"client/*",
