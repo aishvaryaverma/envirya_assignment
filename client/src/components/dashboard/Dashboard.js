@@ -14,7 +14,7 @@ const Dashboard = ({ time: { loading, data }, getTimeList }) => {
 
     return loading ? <Spinner /> : (
         <Fragment>
-            <h1 className="large text-primary">Dashboard</h1>
+            <h1 className="medium text-primary">Time entries</h1>
             <TimeList data={data} />
         </Fragment>
     )

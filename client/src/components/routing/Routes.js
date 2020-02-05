@@ -5,6 +5,7 @@ import NotFound from '../layout/NotFound';
 import Login from '../auth/Login';
 import Register from '../auth/Register';
 import Dashboard from '../dashboard/Dashboard';
+import AddTime from '../dashboard/AddTime';
 import PrivateRoute from '../routing/PrivateRoute';
 
 const Routes = () => {
@@ -15,7 +16,7 @@ const Routes = () => {
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/register" component={Register} />
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                <PrivateRoute exact path="/add-task" component={Dashboard} />
+                <PrivateRoute exact path="/add-task" component={AddTime} />
                 <Route exact component={NotFound} />
             </Switch>
         </section>

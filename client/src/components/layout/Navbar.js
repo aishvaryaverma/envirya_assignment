@@ -13,7 +13,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 	const authLinks = (
 		<ul>
 			<li>
-				<Link to="/profiles">Add Task</Link>
+				<Link to="/add-task">Add Task</Link>
 			</li>
 			<li>|</li>
 			<li>
