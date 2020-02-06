@@ -32,8 +32,8 @@ router.post('/', [auth, [
     // Checking required fields
     check('taskname', 'Task name is required').not().isEmpty(),
     check('project', 'Project is required').not().isEmpty(),
-    check('startdate', 'Project is required').not().isEmpty(),
-    check('enddate', 'Project is required').not().isEmpty()
+    check('startdate', 'Start time is required').not().isEmpty(),
+    check('enddate', 'End time is required').not().isEmpty()
 ]], async (req, res) => {
 
     // Pushing validation result in errors const

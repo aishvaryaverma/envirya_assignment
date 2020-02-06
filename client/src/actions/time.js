@@ -47,7 +47,13 @@ export const createTimeEntry = formData => async dispatch => {
             dispatch(setAlert(res.data.msg, 'success'));
         } catch (err) {
             dispatch({ type: REMOVE_ALL_ALERT });
-            console.log(err);
+            if(err.response.status === 400) {
+
+                const errors = err.response.data.errors;
+                if(errors) {
+                    errors.forEach(error => dispatch(setAlert(error.msg, 'danger') ))
+                }
+            }
         }
     } else {
         console.log('Case 2: No Token in storage');

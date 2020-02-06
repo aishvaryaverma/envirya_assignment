@@ -18,8 +18,14 @@ const AddTime = ({ setAlert, createTimeEntry }) => {
     
     const onFormSubmit = async e => {
         e.preventDefault();
+        dateFormat(startdate)
         createTimeEntry({taskname, project, startdate, enddate})
     };
+
+    const dateFormat = val => {
+        let newVal = val.split(':');
+        console.log(newVal)
+    }
 
 	return (
 		<Fragment>
@@ -51,6 +57,7 @@ const AddTime = ({ setAlert, createTimeEntry }) => {
                         name="startdate"
                         placeholder="Start time"
                         value={startdate}
+                        min="09:00" max="18:00"
                         onChange={e => onChange(e)}
 					/>
 				</div>
