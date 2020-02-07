@@ -26,9 +26,8 @@ const AddTime = ({ setAlert, createTimeEntry }) => {
     const dateFormat = val => {
         let newVal = val.split(':');
         let date = new Date();
-        date = date.setHours(newVal[0]);
-        date = new Date(date).setMinutes(newVal[1]);
-        console.log(new Date(date))
+        date = date.setHours(newVal[0] && 0);
+        date = new Date(date).setMinutes(newVal[1] && 0);
         return new Date(date).toISOString()
     }
 
