@@ -18,13 +18,18 @@ const AddTime = ({ setAlert, createTimeEntry }) => {
     
     const onFormSubmit = async e => {
         e.preventDefault();
-        dateFormat(startdate)
-        createTimeEntry({taskname, project, startdate, enddate})
+        let newSD = dateFormat(startdate);
+        let newED = dateFormat(enddate);
+        createTimeEntry({taskname, project, startdate: newSD, enddate: newED})
     };
 
     const dateFormat = val => {
         let newVal = val.split(':');
-        console.log(newVal)
+        let date = new Date();
+        date = date.setHours(newVal[0]);
+        date = new Date(date).setMinutes(newVal[1]);
+        console.log(new Date(date))
+        return new Date(date).toISOString()
     }
 
 	return (
@@ -57,7 +62,6 @@ const AddTime = ({ setAlert, createTimeEntry }) => {
                         name="startdate"
                         placeholder="Start time"
                         value={startdate}
-                        min="09:00" max="18:00"
                         onChange={e => onChange(e)}
 					/>
 				</div>
